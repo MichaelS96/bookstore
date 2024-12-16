@@ -4,7 +4,7 @@ function displayBooks() {
 
     for (let i = 0; i < books.length; i++) {
         const book = books[i];             // packt die buecher ins HTML 
-        const bookImage = bookImg[i];      // packt die bilder ins HTML 
+        const bookImage = book.image;      // packt die bilder ins HTML 
 
         let bookCardHTML = `
         <div class="book-card">
@@ -45,7 +45,7 @@ function toggleLike(i) {
     const likeCounter = document.getElementById(`likeCounter${i}`);
     const likeImage = document.getElementById(`likeImg${i}`);
 
-    if (!book.liked) {  //ueberprueft ob der button noch nicht betaetigt wurde 
+    if (book.liked === false) {  //ueberprueft ob der button noch nicht betaetigt wurde 
         book.likes++;   // erhoet das like um 1 
         book.liked = true; //kennzeichnet denn like 
         likeImage.src = "assets/like/likepressed.png"; //wechselt zum img das es angezeigt werden soll wenn das buch geliket wurde 

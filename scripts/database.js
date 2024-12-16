@@ -1,14 +1,7 @@
-let bookImg = [
-    'geheimnisdesozean.jpg',
-    'dervergessenpfad.jpg',
-    'farbendeshimmels.jpg',
-    'ratselderzeit.jpg',
-    'derletztewaechter.png'
-]
-
 let books = [
     {
         "name": "Die Geheimnisse des Ozeans",
+        "image": 'geheimnisdesozean.jpg',
         "author": "Clara Meer",
         "likes": 1250,
         "liked": false,
@@ -36,6 +29,7 @@ let books = [
     },
     {
         "name": "Der vergessene Pfad",
+        "image":'dervergessenpfad.jpg',
         "author": "Maximilian Schwarz",
         "likes": 980,
         "liked": false,
@@ -53,6 +47,7 @@ let books = [
     },
     {
         "name": "Die Farben des Himmels",
+        "image":'farbendeshimmels.jpg',
         "author": "Laura Blau",
         "likes": 1520,
         "liked": false,
@@ -84,6 +79,7 @@ let books = [
     },
     {
         "name": "Das Rätsel der Zeit",
+        "image":'ratselderzeit.jpg',
         "author": "Alexander Weiss",
         "likes": 750,
         "liked": false,
@@ -103,6 +99,7 @@ let books = [
     },
     {
         "name": "Der letzte Wächter",
+        "image":'derletztewaechter.png',
         "author": "Sabine Grün",
         "likes": 1300,
         "liked": false,
