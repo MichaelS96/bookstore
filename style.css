@@ -40,18 +40,17 @@ h2 {
 .separator {
     margin-top: 3px;
     margin-bottom: 3px;
-    height: 2px;
+    height: 1px;
     background-color: rgb(8, 58, 58);
 }
 
-.book-image {
+/*.book-image {
     display: flex;
     justify-content: center;
-}
+}*/
 
 .book-image img {
-    /*width: 55%;*/
-    width: 300px;
+    width: 100%;
     height: 150px;
     object-fit: cover;
     padding: 10px 0 10px 0;
@@ -68,27 +67,28 @@ h2 {
 }
 
 .book-card {
-    border-radius: 10px;
-    width: 300px;
-    height: 500px;
-    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 10px;
+    width: 300px;
+    height: 600px;
+    padding: 20px;
     background-color: rgb(62, 124, 124);
 }
 
 .book-header {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
     color: white;
-    white-space: nowrap;
 }
 
 .book-info div {
     margin: 5px 0;
+    display: flex;
+    gap: 5px;
 }
 
 .book-price {
@@ -98,16 +98,41 @@ h2 {
     padding-bottom: 5px;
 }
 
-.input-send {
+.inputSend {
     display: flex;
-
+    justify-content: center;
+    align-items: center;
 }
 
 .send-img {
     width: 25px;
-    padding-left: 14px;
+    padding-left: 10px;
 }
 
-.input-send img{
+.input-send img {
     cursor: pointer;
+}
+
+.input-send img:hover {
+    transform: scale(1.3);
+    transition-duration: 225ms;
+}
+
+.commentary {
+    color: white;
+    overflow-y: auto;
+}
+
+.comments-section p {
+    background-color: rgb(6, 43, 43);
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.comment-name {
+    width: 50px;
+}
+
+.comment-input {
+    width: 60%;
 }

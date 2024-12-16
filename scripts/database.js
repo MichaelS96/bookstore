@@ -31,10 +31,6 @@ let books = [
             {
                 "name": "SciFiGuru",
                 "comment": "Ein cleverer Science-Fiction-Roman mit interessanten Zeitreise-Konzepten und Charakteren."
-            },
-            {
-                "name": "NovelLover",
-                "comment": "Ein Buch, das voller magischer Überraschungen steckt und mich begeistert hat."
             }
         ]
     },
@@ -46,7 +42,14 @@ let books = [
         "price": 14.49,
         "publishedYear": 2021,
         "genre": "Fantasy",
-        "comments": []
+        "comments": [{
+            "name": "BookLover21",
+            "comment": "Ein romantisches Meisterwerk, das mich tief berührt und bewegt hat."
+        },
+        {
+            "name": "FantasyNerd",
+            "comment": "Fantastische Welten und epische Abenteuer - genau mein Geschmack!"
+        },]
     },
     {
         "name": "Die Farben des Himmels",
@@ -106,6 +109,9 @@ let books = [
         "price": 16.75,
         "publishedYear": 2017,
         "genre": "Fantasy",
-        "comments": []
+        "comments": [{
+            "name": "FantasyNerd",
+            "comment": "Fantastische Welten und epische Abenteuer - genau mein Geschmack!"
+        }]
     }]
 
