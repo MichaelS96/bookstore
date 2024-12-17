@@ -19,7 +19,7 @@
     background-color: #37415C;
 }
 
-.book-card:hover {
+.book-card:hovera {
     transform: scale(1.07);
     transition-duration: 225ms;
     box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.2);

@@ -1,4 +1,4 @@
-function displayBooks() {
+function renderBooks() {
     const container = document.getElementById('books-container');
     container.innerHTML = '';
 
