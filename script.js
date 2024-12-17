@@ -3,8 +3,8 @@ function displayBooks() {
     container.innerHTML = '';
 
     for (let i = 0; i < books.length; i++) {
-        const book = books[i];             // packt die buecher ins HTML 
-        const bookImage = book.image;      // packt die bilder ins HTML 
+        const book = books[i];
+        const bookImage = book.image;
 
         let bookCardHTML = `
         <div class="book-card">
@@ -27,7 +27,7 @@ function displayBooks() {
                 </div>
                 <div class="input-send">
                     <input type="text" class="comment-name" id="commentName${i}" placeholder="Name">
-                    <input type="text" class="comment-input" id="commentInput${i}" placeholder="Bewertung hinterlassen">
+                    <input type="text" class="comment-input" id="commentInput${i}" placeholder="Bewertung">
                     <img class="send-img" src="assets/img/send-icon.png" alt="absenden-img" onclick="addComment(${i})">
                 </div>
             </div>
@@ -58,6 +58,16 @@ function toggleLike(i) {
     likeCounter.innerHTML = book.likes;
 }
 
+function getCommentsHTML(comments) {
+    let commentsHTML = '';
+
+    for (let i = 0; i < comments.length; i++) {
+        commentsHTML += `<p><strong>${comments[i].name}:</strong> ${comments[i].comment}</p>`;
+    }
+
+    return commentsHTML;
+}
+
 function addComment(i) {
     const nameInput = document.getElementById(`commentName${i}`);
     const commentInput = document.getElementById(`commentInput${i}`);
@@ -78,12 +88,4 @@ function addComment(i) {
     }
 }
 
-function getCommentsHTML(comments) {
-    let commentsHTML = '';
 
-    for (let i = 0; i < comments.length; i++) {
-        commentsHTML += `<p><strong>${comments[i].name}:</strong> ${comments[i].comment}</p>`;
-    }
-
-    return commentsHTML;
-}
