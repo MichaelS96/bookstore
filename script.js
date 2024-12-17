@@ -32,7 +32,7 @@ function renderBooks() {
                 </div>
             </div>
             <div class="commentary">
-                <div class="comments-section" id="comments${i}">${getCommentsHTML(book.comments)}</div>
+                <div class="comments-section" id="comments${i}">${getComments(book.comments)}</div>
             </div>
         </div>`;
 
@@ -45,20 +45,20 @@ function toggleLike(i) {
     const likeCounter = document.getElementById(`likeCounter${i}`);
     const likeImage = document.getElementById(`likeImg${i}`);
 
-    if (book.liked === false) {  //ueberprueft ob der button noch nicht betaetigt wurde 
-        book.likes++;   // erhoet das like um 1 
-        book.liked = true; //kennzeichnet denn like 
-        likeImage.src = "assets/like/likepressed.png"; //wechselt zum img das es angezeigt werden soll wenn das buch geliket wurde 
+    if (book.liked === false) {
+        book.likes++;
+        book.liked = true;
+        likeImage.src = "assets/like/likepressed.png";
     } else {
         book.likes--;
         book.liked = false;
-        likeImage.src = "assets/like/like.png";  // geht wieder zurueck zum bild was beim nicht gelikten bild sein soll 
+        likeImage.src = "assets/like/like.png";
     }
 
     likeCounter.innerHTML = book.likes;
 }
 
-function getCommentsHTML(comments) {
+function getComments(comments) {
     let commentsHTML = '';
 
     for (let i = 0; i < comments.length; i++) {
@@ -75,17 +75,32 @@ function addComment(i) {
     const commentText = commentInput.value;
 
     if (nameText && commentText) {
-        const newComment = { name: nameText, comment: commentText };  // neues kommentar erstellen
-        books[i].comments.unshift(newComment);  // kommentar am anfang einfuegen
+        const newComment = { name: nameText, comment: commentText };
+        books[i].comments.unshift(newComment);
 
-        const commentsSection = document.getElementById(`comments${i}`);  // kommentarbereich akutalisieren
-        commentsSection.innerHTML = '';
+        const commentsSection = document.getElementById(`comments${i}`);
+        commentsSection.innerHTML = getComments(books[i].comments);
 
-        commentsSection.innerHTML = getCommentsHTML(books[i].comments);// kommentare neu rendern lassen
+        saveCommentsToStorage();
 
-        nameInput.value = '';     // eingabefelder werden zurueckgesetzt
+        nameInput.value = '';
         commentInput.value = '';
     }
 }
 
+function saveCommentsToStorage() {
+    const commentsData = books.map(book => book.comments); // filter nur die Kommentare
+    localStorage.setItem('bookComments', JSON.stringify(commentsData));
+}
 
+function loadCommentsFromStorage() {
+    const storedComments = localStorage.getItem('bookComments');
+    if (storedComments) {
+        const commentsData = JSON.parse(storedComments);
+        for (let i = 0; i < books.length; i++) {
+            if (commentsData[i]) {
+                books[i].comments = commentsData[i];
+            }
+        }
+    }
+}
