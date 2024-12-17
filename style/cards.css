@@ -16,7 +16,13 @@
     width: 300px;
     height: 600px;
     padding: 20px;
-    background-color: rgb(62, 124, 124);
+    background-color: #37415C;
+}
+
+.book-card:hover {
+    transform: scale(1.07);
+    transition-duration: 225ms;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.2);
 }
 
 .book-header {
@@ -31,7 +37,7 @@
     margin-top: 3px;
     margin-bottom: 3px;
     height: 1px;
-    background-color: rgb(8, 58, 58);
+    background-color: whitesmoke;
 }
 
 .book-image img {
@@ -43,7 +49,7 @@
 
 .book-price {
     font-size: 24px;
-    color: #9b9b9b;
+    color: #f10534;
     font-weight: bold;
     padding-bottom: 5px;
 }
@@ -103,7 +109,7 @@
 }
 
 .comments-section p {
-    background-color: rgb(6, 43, 43);
+    background-color: #242E49;
     padding: 3px;
     border-radius: 5px;
 }

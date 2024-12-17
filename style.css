@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: rgb(6, 43, 43);
+    background-color: #242E49;
 }
 
 .bookstore-logo {
@@ -20,7 +20,7 @@ body {
 }
 
 .navbar {
-    background-color: rgb(62, 124, 124);
+    background-color: #37415C;
 }
 
 .header {
