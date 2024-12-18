@@ -3,7 +3,7 @@ function renderBooks() {
     container.innerHTML = ''; // Container leeren
 
     for (let i = 0; i < books.length; i++) {
-        const bookHTML = generateBookCars(books[i], i); // ruft die template function afu
+        const bookHTML = generateBookCards(books[i], i); // ruft die template function afu
         container.innerHTML += bookHTML;
     }
 }
