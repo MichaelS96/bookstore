@@ -3,6 +3,12 @@ body {
     background-color: #242E49;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    padding: 15px 0 15px 25px;
+}
+
 .bookstore-logo {
     width: 54px;
     padding-right: 20px;
@@ -13,16 +19,12 @@ body {
     color: white;
 }
 
-.next-headline {
-    color: white;
-    font-size: 30px;
-    padding-left: 10px;
-}
-
 .navbar {
     background-color: #37415C;
 }
 
-.header {
-    padding: 15px 0 15px 25px;
+@media (max-width: 756px) {
+    .bookstore-logo {
+        width: 46px;
+    }
 }
