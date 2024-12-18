@@ -3,7 +3,7 @@ function renderBooks() {
     container.innerHTML = ''; // Container leeren
 
     for (let i = 0; i < books.length; i++) {
-        const bookHTML = generateBookCards(books[i], i); // ruft die template function afu
+        const bookHTML = generateBookCards(books[i], i); // ruft die function generatebookcard afu
         container.innerHTML += bookHTML;
     }
 }
@@ -22,7 +22,7 @@ function toggleLike(i) {
         book.liked = false;
         likeImage.src = "assets/like/like.png";
     }
-
+    
     likeCounter.innerHTML = book.likes;
 }
 
