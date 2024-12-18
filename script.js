@@ -17,8 +17,6 @@ function toggleLike(i) {
         book.likes++;
         book.liked = true;
         likeImage.src = "assets/like/likepressed.png";
-        saveLikeToStorage()
-        loadLikeFromStorage()
     } else {
         book.likes--;
         book.liked = false;
