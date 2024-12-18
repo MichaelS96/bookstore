@@ -17,6 +17,8 @@ function toggleLike(i) {
         book.likes++;
         book.liked = true;
         likeImage.src = "assets/like/likepressed.png";
+        saveLikeToStorage()
+        loadLikeFromStorage()
     } else {
         book.likes--;
         book.liked = false;
@@ -43,8 +45,8 @@ function addComment(i) {
     const commentText = commentInput.value;
 
     if (nameText && commentText) {
-        const newComment = { name: nameText, comment: commentText };
-        books[i].comments.unshift(newComment);
+        const newComment = { "name": nameText, "comment": commentText };
+        books[i].comments.unshift(newComment);      // versetzt das kommentar noch oben 
 
         const commentsSection = document.getElementById(`comments${i}`);
         commentsSection.innerHTML = getComments(books[i].comments);
